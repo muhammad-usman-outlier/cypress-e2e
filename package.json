@@ -1,0 +1,14 @@
+{
+  "name": "cypress-module-api",
+  "version": "1.0.0",
+  "description": "testing cypress module api",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "aqilusman45@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.6.0"
+  }
+}
