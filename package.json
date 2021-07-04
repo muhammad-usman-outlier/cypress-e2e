@@ -4,7 +4,8 @@
   "description": "testing cypress module api",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "cypress-open": "cypress open"
   },
   "author": "aqilusman45@gmail.com",
   "license": "ISC",

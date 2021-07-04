@@ -1,1 +1,6 @@
 node_modules
+
+# Ignore default cypress examples
+cypress/integration/examples
+cypress/screenshots/*
+cypress/videos/*
