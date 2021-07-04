@@ -1,6 +1,15 @@
 const cypress = require("cypress");
 
-cypress.run({
-  config: {},
-  env: {},
-});
+function onSuccess(testResults) {
+  console.log(testResults);
+}
+
+cypress
+  .run({
+    config: {},
+    env: {},
+  })
+  .then(onSuccess)
+  .catch((error) => {
+    throw new Error(error);
+  });
