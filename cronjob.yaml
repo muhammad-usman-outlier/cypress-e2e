@@ -1,0 +1,21 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: site-performance-monitor
+spec:
+  schedule: "* * * * *"
+  concurrencyPolicy: Allow
+  startingDeadlineSeconds: 100
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cypress-run
+            image: gcr.io/local-passage-318821/cypress-e2e
+            command: ['npm']
+            args: ['run', 'cypress-test']
+          restartPolicy: OnFailure
