@@ -1,4 +1,4 @@
-FROM node:14
+FROM cypress/base:10
 
 # Create app directory
 WORKDIR /usr/outlier/site-experience-monitor
@@ -14,3 +14,6 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+
+# verify cypress
+RUN $(npm bin)/cypress verify
