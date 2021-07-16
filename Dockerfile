@@ -17,3 +17,5 @@ COPY . .
 
 # verify cypress
 RUN $(npm bin)/cypress verify
+
+CMD ["npm", "run", "cypress-test"]
