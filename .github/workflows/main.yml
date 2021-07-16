@@ -1,0 +1,21 @@
+name: Build Image and Push to GCR
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: authenticate and push image
+        uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
+        with:
+          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }} 
+          project_id: ${{ secrets.GCLOUD_PORJECT_ID }}
+          image_name: cypress-e2e
