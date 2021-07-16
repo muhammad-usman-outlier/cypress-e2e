@@ -1,15 +1,7 @@
-const cypress = require("cypress");
+const { name } = require("./package.json");
 
-function onSuccess(testResults) {
-  console.log(testResults);
-}
+const PORT = process.env.PORT || 1337;
 
-cypress
-  .run({
-    config: {},
-    env: {},
-  })
-  .then(onSuccess)
-  .catch((error) => {
-    throw new Error(error);
-  });
+require("./server")({ port: PORT }, () => {
+  console.log(`${name} listening on port ${PORT}`);
+});
