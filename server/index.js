@@ -6,20 +6,15 @@ const app = express();
 app.get("/run-test", cypressController);
 
 async function cypressController(req, res) {
-  res.json({
-    status: "tests running",
-  });
-  return cypress
-    .run({
+  try {
+    const results = await cypress.run({
       config: {},
       env: {},
-    })
-    .then((results) => {
-      console.log(results);
-    })
-    .catch((error) => {
-      throw new Error(error);
     });
+    res.json(results)
+  } catch (error) {
+    throw new Error(error);
+  }
 }
 
 module.exports = (opts = {}, cb) => {
