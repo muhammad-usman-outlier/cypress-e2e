@@ -1,4 +1,4 @@
-FROM cypress/base:10
+FROM cypress/browsers
 
 # Create app directory
 WORKDIR /usr/outlier/site-experience-monitor
