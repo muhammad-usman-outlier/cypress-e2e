@@ -7,11 +7,15 @@ app.get("/run-test", cypressController);
 
 async function cypressController(req, res) {
   try {
-    const results = await cypress.run({
-      config: {},
-      env: {},
+    cypress
+      .run({
+        config: {},
+        env: {},
+      })
+      .then(console.log);
+    res.json({
+      msg: "test running",
     });
-    res.json(results)
   } catch (error) {
     throw new Error(error);
   }
