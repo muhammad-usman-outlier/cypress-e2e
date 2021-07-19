@@ -11,6 +11,8 @@ async function cypressController (req, res) {
       status: 'test execution started'
     })
 
+    console.log("test")
+    
     const results = await cypress.run({
       config: {},
       env: {}
