@@ -6,7 +6,7 @@ const app = express();
 app.post("/run-test", cypressController);
 
 async function cypressController(req, res) {
-  req.setTimeout(300000)
+  req.setTimeout(3600000)
   const results = await cypress.run({
     config: {},
     env: {},
