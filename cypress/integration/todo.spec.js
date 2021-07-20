@@ -4,6 +4,7 @@ describe('Calculus', () => {
   before(() => {
     cy.clearCookies({ domain: null })
     cy.visit('https://dashboard.outlier.org')
+    console.log(Cypress.env('AUTH_USERNAME'), Cypress.env('AUTH_PASSWORD'));
   })
 
   context('Login', () => {
@@ -12,11 +13,11 @@ describe('Calculus', () => {
     })
 
     it('should type email', () => {
-      cy.get('[type="email"]').type(Cypress.env('muhammad.usman@engineering.outlier.org'))
+      cy.get('[type="email"]').type(Cypress.env('AUTH_USERNAME'))
     })
 
     it('should type password', () => {
-      cy.get('[type="password"]').type(Cypress.env('@dm!n03120'))
+      cy.get('[type="password"]').type(Cypress.env('AUTH_PASSWORD'))
     })
 
     it('should click continue button', () => {
