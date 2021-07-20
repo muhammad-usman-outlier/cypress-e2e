@@ -18,4 +18,6 @@ COPY . .
 # verify cypress
 RUN $(npm bin)/cypress verify
 
+RUN node --version
+
 CMD ["npm", "run", "cypress-test"]
