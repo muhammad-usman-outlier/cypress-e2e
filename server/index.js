@@ -3,20 +3,17 @@ const cypress = require("cypress");
 
 const app = express();
 
-app.get("/run-test", cypressController);
+app.post("/run-test", cypressController);
 
 async function cypressController(req, res) {
-  res.json({
-    status: "test execution started",
+  const results = await cypress.run({
+    config: {},
+    env: {},
   });
 
-  cypress
-    .run({
-      config: {},
-      env: {},
-    })
-    .then(console.log)
-    .catch(console.log);
+  console.log(results);
+
+  res.json(results);
 }
 
 module.exports = (opts = {}, cb) => {
