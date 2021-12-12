@@ -18,12 +18,6 @@ module.exports = {
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }]
   ],
-  branches: [
-      'main',
-    {
-      name: 'feat/*',
-      prerelease: 'alpha'
-    }
-  ],
+  branches: ['main'],
   preset: 'angular'
 }
