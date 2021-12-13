@@ -16,5 +16,4 @@ module.exports = {
     ],
   ],
   branches: ["main"],
-  preset: "angular",
 };
