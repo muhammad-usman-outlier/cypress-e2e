@@ -1,6 +1,6 @@
 {
   "name": "cypress-module-api",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "testing cypress module api",
   "main": "index.js",
   "scripts": {
