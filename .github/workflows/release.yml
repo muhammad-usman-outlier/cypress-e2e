@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  release:
+  release-new:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
