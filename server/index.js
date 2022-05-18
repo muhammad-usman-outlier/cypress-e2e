@@ -1,23 +1,27 @@
-const express = require("express");
-const cypress = require("cypress");
+const express = require('express')
+const cypress = require('cypress')
 
-const app = express();
+const app = express()
 
-app.post("/run-test", cypressController);
+app.get('/', (_req, res) => {
+  res.json({ success: true })
+})
+
+app.post('/run-test', cypressController)
 
 async function cypressController(req, res) {
   req.setTimeout(3600000)
   const results = await cypress.run({
     config: {},
     env: {},
-  });
+  })
 
-  console.log(results);
+  console.log(results)
 
-  res.json(results);
+  res.json(results)
 }
 
 module.exports = (opts = {}, cb) => {
-  const port = opts.port || 3000;
-  return app.listen(port, cb);
-};
+  const port = opts.port || 3000
+  return app.listen(port, cb)
+}
